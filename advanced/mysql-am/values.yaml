@@ -18,10 +18,18 @@ mysql:
   mysqlUser: wso2carbon
   mysqlPassword: wso2carbon
   fullnameOverride: "wso2am-mysql-db-service"
+  startupProbe:
+
+    initialDelaySeconds: 20
+
+    periodSeconds: 10
+
+    failureThreshold: 30
+
   livenessProbe:
-    initialDelaySeconds: 120
+    initialDelaySeconds: 20
   readinessProbe:
-    initialDelaySeconds: 120
+    initialDelaySeconds: 20
   configurationFiles:
     mysql.cnf: |-
       [mysqld]
